@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+
+    </head>
+    <body>
+        <button onclick="test()">Call API</button></body>
+        <br/><br/>
+        <div id="response"></div>
+    </body>
+    <script type="text/javascript">
+        function test(){
+            fetch("/api")
+            // .then(resp=>resp.json())
+            .then(res=>{
+                let resp = document.getElementById('response')
+                console.log("Oauth2 Resp:",res)
+                resp.innerHTML = JSON.stringify(res);
+            })
+        }
+    </script>
+</html>
